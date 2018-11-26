@@ -34,7 +34,7 @@ namespace Project3X
         // This method creates a positon for a planet based on its number in the planetList (see Star Class)
         public static Vector3 PlanetPosition(int planetListNumber)
         {
-            float distance = (planetListNumber + 1) * 5;
+            float distance = (planetListNumber + 1) * 15; //TODO random with proper scale
             float angle = RandomAngle();
 
             Vector3 cartPosition = PolarToCart(distance, angle);
