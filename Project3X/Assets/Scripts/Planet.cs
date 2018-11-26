@@ -2,17 +2,14 @@
 
 namespace Project3X
 {
-    public class Planet
+    public class Planet : MonoBehaviour
     {
-        public string planetName { get; private set; }
+        public string planetName;
         
-        public Planet(SolarSystem solarSystem, int number, Transform parent = null)
+        public void Start()
         {
-            planetName = solarSystem.solarSystemName + " " + number;
-
-            GameObject empty = new GameObject();
-            empty.name = planetName;
-            empty.transform.SetParent(parent);
+            
+            
 
             Debug.Log("Created planet: " + planetName);
         }

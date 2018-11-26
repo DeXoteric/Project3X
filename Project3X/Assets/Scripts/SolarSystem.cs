@@ -3,38 +3,52 @@ using UnityEngine;
 
 namespace Project3X
 {
-    public class SolarSystem
+    public class SolarSystem : MonoBehaviour
     {
-        public string solarSystemName { get; set; }
+        private string solarSystemName;
         private int numPlanets;
         private int numAsteroids;
         private int numConnectionPoints;
 
         private Star star;
-        public List<Planet> planets;
+        private List<Planet> planets  = new List<Planet>();
 
-        public SolarSystem()
+        public void Start()
         {
             solarSystemName = "Solar System";
+            this.name = solarSystemName;
+
             numPlanets = 4;
             numAsteroids = 3;
             numConnectionPoints = 2;
 
-            GameObject empty = new GameObject();
-            empty.name = solarSystemName;
-            empty.transform.SetParent(Galaxy.instance.transform);
 
             Debug.Log("created " + solarSystemName + " with: " + numPlanets + " planets, " + numAsteroids + " asteroids, " + numConnectionPoints + " connection point/s");
 
-            star = new Star(this, empty.transform);
+            CreateStar();
+            CreatePlanets();
+        }
 
-            planets = new List<Planet>();
+        private void CreateStar()
+        {
+            star = Instantiate(Galaxy.instance.starPrefab);
+            star.transform.SetParent(transform);
+            star.name = solarSystemName;
+            star.starName = solarSystemName;
+        }
 
+        private void CreatePlanets()
+        {
             for (int i = 0; i < numPlanets; i++)
             {
-                Planet planet = new Planet(this, i + 1, empty.transform);
+                Planet planet = Instantiate(Galaxy.instance.planetPrefab);
+                planet.transform.SetParent(transform);
+                planet.name = solarSystemName + " " + i;
+                planet.planetName = solarSystemName + " " + i;
                 planets.Add(planet);
             }
         }
+
+        
     }
 }

@@ -7,17 +7,17 @@ namespace Project3X
     {
         public static Galaxy instance;
 
-        private List<SolarSystem> solarSystems;
+        public SolarSystem solarSystemPrefab;
+        public Star starPrefab;
+        public Planet planetPrefab;
+
+        private List<SolarSystem> solarSystems = new List<SolarSystem>();
 
         private void OnEnable()
         {
             instance = this;
         }
-
-        private void Awake()
-        {
-            solarSystems = new List<SolarSystem>();
-        }
+        
 
         private void Start()
         {
@@ -26,7 +26,8 @@ namespace Project3X
 
         public void CreateSolarSystem()
         {
-            var solarSystem = new SolarSystem();
+            SolarSystem solarSystem = Instantiate(solarSystemPrefab);
+            solarSystem.transform.SetParent(transform);
             solarSystems.Add(solarSystem);
         }
     }
