@@ -1,20 +1,39 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Project3X
 {
     public class Star
     {
-        private string starName;
+        public string StarName { get; private set; }
+        public Vector3 StarPosition { get; private set; }
+        private int numPlanets;
+        private int numAsteroids;
+        private int numConnectionPoints;
 
-        public Star(SolarSystem solarSystem, Transform parent = null)
+        public List<Planet> planets = new List<Planet>();
+
+        public Star(Vector3 position, int index, Transform parent)
         {
-            starName = solarSystem.solarSystemName;
+            StarName = "Star " + (index + 1);
+            StarPosition = position;
+            numPlanets = 4;
+            numAsteroids = 3;
+            numConnectionPoints = 2;
 
-            GameObject empty = new GameObject();
-            empty.name = starName;
-            empty.transform.SetParent(parent);
+            //Debug.Log("created " + StarName + " with: " + numPlanets + " planets, " + numAsteroids + " asteroids, " + numConnectionPoints + " connection point/s");
 
-            Debug.Log("Created star: " + starName);
+            GameObject star = SpaceObjects.CreateSphereObject(StarName);
+
+            for (int i = 0; i < numPlanets; i++)
+            {
+                Planet planet = new Planet(this, i, star.transform);
+                planets.Add(planet);
+            }
+
+            star.transform.position = position;
+            star.transform.SetParent(parent);
+            
         }
     }
 }

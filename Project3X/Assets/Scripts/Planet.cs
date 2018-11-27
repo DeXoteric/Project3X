@@ -4,19 +4,20 @@ namespace Project3X
 {
     public class Planet
     {
-        public string planetName { get; private set; }
-        
-        public Planet(SolarSystem solarSystem, int number, Transform parent = null)
+        public string PlanetName { get; private set; }
+        public Vector3 PlanetPosition { get; private set; }
+
+        public Planet(Star star, int index, Transform parent)
         {
-            planetName = solarSystem.solarSystemName + " " + number;
+            Vector3 randomPlanetPosition = MathFuctions.PlanetPosition(index);
 
-            GameObject empty = new GameObject();
-            empty.name = planetName;
-            empty.transform.SetParent(parent);
+            PlanetName = star.StarName + " " + (index + 1);
+            
+            GameObject planet = SpaceObjects.CreateSphereObject(PlanetName, randomPlanetPosition, parent);
 
-            Debug.Log("Created planet: " + planetName);
+            PlanetPosition = star.StarPosition + planet.transform.position;
+
+            Debug.Log("Created planet: " + PlanetName);
         }
-
-        
     }
 }

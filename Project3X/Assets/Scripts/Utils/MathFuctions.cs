@@ -31,7 +31,7 @@ namespace Project3X
             return cartPosition;
         }
 
-        // This method creates a positon for a planet based on its number in the planetList (see Star Class)
+        // This method creates a positon for a planet based on its number in the planetList 
         public static Vector3 PlanetPosition(int planetListNumber)
         {
             float distance = (planetListNumber + 1) * 5;

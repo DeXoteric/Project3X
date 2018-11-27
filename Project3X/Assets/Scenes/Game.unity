@@ -217,6 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d044875c985ab44fa70346fb3ad74f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfStars: 300
+  minimumRadius: 300
+  maximumRadius: 1000
+  minDistBetweenStars: 50
 --- !u!4 &2141137210
 Transform:
   m_ObjectHideFlags: 0
