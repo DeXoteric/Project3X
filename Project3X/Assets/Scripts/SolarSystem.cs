@@ -42,10 +42,9 @@ namespace Project3X
             for (int i = 0; i < numPlanets; i++)
             {
                 Planet planet = Instantiate(Galaxy.instance.planetPrefab);
-                planet.transform.position = MathFuctions.PlanetPosition(i);
                 planet.transform.SetParent(transform);
-                planet.name = solarSystemName + " " + (i + 1);
-                planet.planetName = solarSystemName + " " + (i + 1);
+                planet.name = solarSystemName + " " + i;
+                planet.planetName = solarSystemName + " " + i;
                 planets.Add(planet);
             }
         }
