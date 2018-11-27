@@ -2,13 +2,18 @@
 
 namespace Project3X
 {
-    public class Star : MonoBehaviour
+    public class Star
     {
-        public string starName;
+        private string starName;
 
-        public void Start()
+        public Star(SolarSystem solarSystem, Transform parent = null)
         {
-            
+            starName = solarSystem.solarSystemName;
+
+            GameObject empty = new GameObject();
+            empty.name = starName;
+            empty.transform.SetParent(parent);
+
             Debug.Log("Created star: " + starName);
         }
     }
