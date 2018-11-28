@@ -5,6 +5,8 @@ namespace Project3X
 {
     public class Star
     {
+        public static SaveData saveData;
+
         public string StarName { get; private set; }
         public Vector3 StarPosition { get; private set; }
         public float DistanceFromGalaxyCenter { get; private set; }
@@ -19,7 +21,7 @@ namespace Project3X
             StarName = "Star " + (index + 1);
             StarPosition = position;
             DistanceFromGalaxyCenter = Vector3.Distance(Vector3.zero, position);
-            numPlanets = 4;
+            numPlanets = RandomNumPlanets();
             numAsteroids = 3;
             numConnectionPoints = 2;
 
@@ -37,7 +39,11 @@ namespace Project3X
             star.transform.SetParent(parent);
 
             //Debug.Log("Distance from galaxy center: " + DistanceFromGalaxyCenter);
-            
+        }
+
+        private int RandomNumPlanets()
+        {
+            return Random.Range(2, 7);
         }
     }
 }

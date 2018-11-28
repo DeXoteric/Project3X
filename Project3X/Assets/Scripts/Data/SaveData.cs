@@ -1,14 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-[Serializable]
-public struct SaveData
+namespace Project3X
 {
+    [Serializable]
+    public struct SaveData
+    {
+        public static SaveData saveData;
 
-    //just what is needed to recreate galaxy? like seed, number of stars etc.
-    
-    
-
+        //[SerializeField] [Range(-1999999999, 1999999999)]
+        public int seedNumber;
+        public int numberOfStars;
+        public int minimumRadius;
+        public int maximumRadius;
+        public float minDistBetweenStars;
+    }
 }

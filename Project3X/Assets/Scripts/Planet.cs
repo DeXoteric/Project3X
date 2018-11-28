@@ -4,6 +4,8 @@ namespace Project3X
 {
     public class Planet
     {
+        public static SaveData saveData;
+
         public string PlanetName { get; private set; }
         public Vector3 PlanetPosition { get; private set; }
         public float DistanceFromStar { get; private set; }
@@ -21,7 +23,10 @@ namespace Project3X
 
             //Debug.Log("Distance from star: " + DistanceFromStar);
             //Debug.Log("Created planet: " + PlanetName);
+
+            
         }
+        
         
     }
 }

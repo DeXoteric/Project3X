@@ -3,36 +3,25 @@ using UnityEngine;
 
 namespace Project3X
 {
-    public class Galaxy : MonoBehaviour
+    
+    public class Galaxy 
     {
-        public static Galaxy instance;
-
-        [SerializeField] private int numberOfStars = 300;
-        [SerializeField] [Range(0, 500)] public int minimumRadius = 0;
-        [SerializeField] [Range(700, 1000)] public int maximumRadius = 1000;
-        //[SerializeField] [Range(-1999999999, 1999999999)] public int seedNumber = 0;
-
-        [SerializeField] private float minDistBetweenStars = 2f;
-
-        private List<Star> stars;
-
-        private void OnEnable()
+        
+        public List<Star> stars = new List<Star>();
+        
+        public Galaxy(int seed, int numberOfStars, int minimumRadius, int maximumRadius, float minDistBetweenStars)
         {
-            instance = this;
-        }
+            SaveData.saveData.seedNumber = seed;
+            SaveData.saveData.numberOfStars = numberOfStars;
+            SaveData.saveData.minimumRadius = minimumRadius;
+            SaveData.saveData.maximumRadius = maximumRadius;
+            SaveData.saveData.minDistBetweenStars = minDistBetweenStars;
 
-        private void Awake()
-        {
-            stars = new List<Star>();
-        }
 
-        private void Start()
-        {
-            CreateGalaxy();
-        }
+            GameObject galaxy = new GameObject("Galaxy");
 
-        public void CreateGalaxy()
-        {
+            Random.InitState(seed);
+
             int failCount = 0;
 
             for (int i = 0; i < numberOfStars; i++)
@@ -43,8 +32,9 @@ namespace Project3X
 
                 if (positionCollider.Length == 0)
                 {
-                    Star star = new Star(starPosition, i, this.transform);
+                    Star star = new Star(starPosition, i, galaxy.transform);
                     stars.Add(star);
+                    
 
                     failCount = 0;
                 }
