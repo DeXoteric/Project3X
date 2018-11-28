@@ -61,11 +61,11 @@ namespace Project3X
                 }
             }
 
-            Debug.Log(Vector3.Distance(stars[0].StarPosition, stars[1].StarPosition));
-            Debug.Log(Vector3.Distance(stars[0].planets[0].PlanetPosition, stars[1].planets[0].PlanetPosition));
-
-            Debug.Log(stars[0].planets[0].PlanetPosition);
-            Debug.Log(stars[1].planets[0].PlanetPosition);
+            //Debug.Log(Vector3.Distance(stars[0].StarPosition, stars[1].StarPosition));
+            //Debug.Log(Vector3.Distance(stars[0].planets[0].PlanetPosition, stars[1].planets[0].PlanetPosition));
+            
+            //Debug.Log(stars[0].planets[0].PlanetPosition);
+            //Debug.Log(stars[1].planets[0].PlanetPosition);
         }
     }
 }
