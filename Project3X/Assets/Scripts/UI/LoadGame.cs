@@ -4,19 +4,19 @@ namespace Project3X
 {
     public class LoadGame : MonoBehaviour
     {
-        //public static SaveData saveData;
 
+        
         public void OnClickLoadGame()
         {
+            DataManager.LoadGame("data");
 
-            SaveData.saveData = DataManager.Load<SaveData>("save");
-
-            Galaxy galaxy = new Galaxy(SaveData.saveData.seedNumber,
-                SaveData.saveData.numberOfStars,
-                SaveData.saveData.minimumRadius,
-                SaveData.saveData.maximumRadius,
-                SaveData.saveData.minDistBetweenStars);
-
+            Galaxy galaxy = new Galaxy(DataManager.saveData.seedNumber,
+                                        DataManager.saveData.numberOfStars,
+                                        DataManager.saveData.minimumRadius,
+                                        DataManager.saveData.maximumRadius,
+                                        DataManager.saveData.minDistBetweenStars);
         }
+
+        
     }
 }

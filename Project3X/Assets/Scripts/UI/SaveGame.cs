@@ -7,7 +7,7 @@ namespace Project3X
         
         public void OnClickSaveGame()
         {
-            DataManager.Save<SaveData>(SaveData.saveData, "save");
+            DataManager.SaveGame("data");
             
         }
     }

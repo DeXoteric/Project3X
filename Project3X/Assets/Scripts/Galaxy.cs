@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Project3X
 {
-    
+       
     public class Galaxy 
     {
         
@@ -11,11 +11,11 @@ namespace Project3X
         
         public Galaxy(int seed, int numberOfStars, int minimumRadius, int maximumRadius, float minDistBetweenStars)
         {
-            SaveData.saveData.seedNumber = seed;
-            SaveData.saveData.numberOfStars = numberOfStars;
-            SaveData.saveData.minimumRadius = minimumRadius;
-            SaveData.saveData.maximumRadius = maximumRadius;
-            SaveData.saveData.minDistBetweenStars = minDistBetweenStars;
+            DataManager.saveData.seedNumber = seed;
+            DataManager.saveData.numberOfStars = numberOfStars;
+            DataManager.saveData.minimumRadius = minimumRadius;
+            DataManager.saveData.maximumRadius = maximumRadius;
+            DataManager.saveData.minDistBetweenStars = minDistBetweenStars;
 
 
             GameObject galaxy = new GameObject("Galaxy");
