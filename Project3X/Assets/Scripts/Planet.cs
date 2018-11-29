@@ -15,11 +15,17 @@ namespace Project3X
             Vector3 randomPlanetPosition = MathFuctions.PlanetPosition(index);
 
             PlanetName = star.StarName + " " + (index + 1);
-            
-            GameObject planet = SpaceObjects.CreateSphereObject(PlanetName, randomPlanetPosition, parent);
 
+            //GameObject planet = SpaceObjects.CreateSphereObject(PlanetName, randomPlanetPosition, parent);
+            GameObject planet = GameObject.Instantiate(GalaxyManager.instance.planetPrefab);
+            planet.name = PlanetName;
+            planet.transform.position = randomPlanetPosition;
+            planet.transform.SetParent(parent);
             PlanetPosition = star.StarPosition + planet.transform.position;
             DistanceFromStar = Vector3.Distance(star.StarPosition, PlanetPosition);
+
+
+            GalaxyManager.instance.planets.Add(planet.name, this);
 
             //Debug.Log("Distance from star: " + DistanceFromStar);
             //Debug.Log("Created planet: " + PlanetName);

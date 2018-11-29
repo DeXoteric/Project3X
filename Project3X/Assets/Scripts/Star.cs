@@ -27,7 +27,9 @@ namespace Project3X
 
             //Debug.Log("created " + StarName + " with: " + numPlanets + " planets, " + numAsteroids + " asteroids, " + numConnectionPoints + " connection point/s");
 
-            GameObject star = SpaceObjects.CreateSphereObject(StarName);
+            //GameObject star = SpaceObjects.CreateSphereObject(StarName);
+            GameObject star = GameObject.Instantiate(GalaxyManager.instance.starPrefab);
+            star.name = StarName;
 
             for (int i = 0; i < numPlanets; i++)
             {

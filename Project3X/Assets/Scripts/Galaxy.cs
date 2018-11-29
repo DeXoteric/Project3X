@@ -28,7 +28,9 @@ namespace Project3X
             {
                 Vector3 starPosition = MathFuctions.RandomPosition(minimumRadius, maximumRadius);
 
-                Collider[] positionCollider = Physics.OverlapSphere(starPosition, minDistBetweenStars);
+                //Collider[] positionCollider = Physics.OverlapSphere(starPosition, minDistBetweenStars);
+
+                Collider2D[] positionCollider = Physics2D.OverlapCircleAll(starPosition, minDistBetweenStars);
 
                 if (positionCollider.Length == 0)
                 {
