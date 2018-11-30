@@ -14,10 +14,11 @@ namespace Project3X
         private int numAsteroids;
         private int numConnectionPoints;
 
-        public List<Planet> planets = new List<Planet>();
+        
 
         public Star(Vector3 position, int index, Transform parent)
         {
+            
             StarName = "Star " + (index + 1);
             StarPosition = position;
             DistanceFromGalaxyCenter = Vector3.Distance(Vector3.zero, position);
@@ -31,14 +32,18 @@ namespace Project3X
             GameObject star = GameObject.Instantiate(GalaxyManager.instance.starPrefab);
             star.name = StarName;
 
+            GalaxyManager.instance.stars.Add(star.name, this);
+
             for (int i = 0; i < numPlanets; i++)
             {
                 Planet planet = new Planet(this, i, star.transform);
-                planets.Add(planet);
+                
+                
             }
 
             star.transform.position = position;
             star.transform.SetParent(parent);
+           
 
             //Debug.Log("Distance from galaxy center: " + DistanceFromGalaxyCenter);
         }

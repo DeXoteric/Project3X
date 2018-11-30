@@ -7,7 +7,7 @@ namespace Project3X
     public class Galaxy 
     {
         
-        public List<Star> stars = new List<Star>();
+        
         
         public Galaxy(int seed, int numberOfStars, int minimumRadius, int maximumRadius, float minDistBetweenStars)
         {
@@ -35,7 +35,7 @@ namespace Project3X
                 if (positionCollider.Length == 0)
                 {
                     Star star = new Star(starPosition, i, galaxy.transform);
-                    stars.Add(star);
+                    
                     
 
                     failCount = 0;

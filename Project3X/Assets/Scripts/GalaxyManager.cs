@@ -7,6 +7,8 @@ namespace Project3X
     {
         public static GalaxyManager instance;
 
+       
+
         [Header("Prefabs")]
         public GameObject starPrefab;
         public GameObject planetPrefab;
@@ -17,6 +19,8 @@ namespace Project3X
         [SerializeField] [Range(700, 2000)] public int maximumRadius = 1000;
         [SerializeField] public float minDistBetweenStars = 50f;
 
+        
+        public Dictionary<string, Star> stars = new Dictionary<string, Star>();
         public Dictionary<string, Planet> planets = new Dictionary<string, Planet>();
 
         private void OnEnable()
