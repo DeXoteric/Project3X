@@ -9,56 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1251390880186714}
+  m_RootGameObject: {fileID: 1199644826041510}
   m_IsPrefabAsset: 1
---- !u!1 &1251390880186714
+--- !u!1 &1199644826041510
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4333925658326144}
-  - component: {fileID: 114001465947979570}
+  - component: {fileID: 4255581418218056}
+  - component: {fileID: 114097103428699974}
   m_Layer: 0
-  m_Name: Galaxy Manager
+  m_Name: Galaxy Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4333925658326144
+--- !u!4 &4255581418218056
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1251390880186714}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1199644826041510}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114001465947979570
+--- !u!114 &114097103428699974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1251390880186714}
+  m_GameObject: {fileID: 1199644826041510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eccd356b86b177a409e8b83507798742, type: 3}
+  m_Script: {fileID: 11500000, guid: eb2af56dacc98d14e960de3d0d783c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starPrefab: {fileID: 114529519944554386, guid: b93ecd857a09cbb41b027c6d59529f5c,
-    type: 2}
-  planetPrefab: {fileID: 114689485040252412, guid: 0a5e90fe735a95b418aec1e8f0281c4b,
-    type: 2}
-  seedNumber: 0
-  minimumRadius: 100
-  maximumRadius: 2000
-  numberOfStars: 250
-  minDistBetweenStars: 150
-  minNumPlanets: 2
-  maxNumPlanets: 6

@@ -7,19 +7,21 @@ namespace Project3X
     {
         public static GalaxyManager instance;
 
-       
-
         [Header("Prefabs")]
-        public GameObject starPrefab;
-        public GameObject planetPrefab;
+        public Star starPrefab;
+        public Planet planetPrefab;
 
+        [Header("Galaxy")]
         [SerializeField] [Range(-1999999999, 1999999999)] public int seedNumber = 0;
-        [SerializeField] public int numberOfStars = 300;
-        [SerializeField] [Range(0, 500)] public int minimumRadius = 300;
-        [SerializeField] [Range(700, 2000)] public int maximumRadius = 1000;
-        [SerializeField] public float minDistBetweenStars = 50f;
+        [SerializeField] [Range(0, 500)] public int minimumRadius = 500;
+        [SerializeField] [Range(1000, 5000)] public int maximumRadius = 5000;
+        [SerializeField] public int numberOfStars = 250;
+        [SerializeField] public float minDistBetweenStars = 150f;
 
-        
+        [Header("Stars")]
+        [SerializeField] [Range(0, 2)] private int minNumPlanets;
+        [SerializeField] [Range(3, 6)] private int maxNumPlanets;
+
         public Dictionary<string, Star> stars = new Dictionary<string, Star>();
         public Dictionary<string, Planet> planets = new Dictionary<string, Planet>();
 
@@ -30,10 +32,9 @@ namespace Project3X
 
         private void Start()
         {
-            Galaxy galaxy = new Galaxy(seedNumber, numberOfStars, minimumRadius, maximumRadius, minDistBetweenStars);
-
-
-            
+            GalaxyGenerator.instance.CreateGalaxy(seedNumber,
+                numberOfStars, minimumRadius, maximumRadius, minDistBetweenStars,
+                minNumPlanets, maxNumPlanets);
         }
     }
 }

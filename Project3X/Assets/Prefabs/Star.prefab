@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 4147866143581742}
   - component: {fileID: 212509228697022070}
   - component: {fileID: 58875532026936252}
+  - component: {fileID: 114529519944554386}
   m_Layer: 9
   m_Name: Star
   m_TagString: Untagged
@@ -169,6 +170,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114529519944554386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758239889063826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae896f0a65ba6de4488edbdff6e0edf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planets: []
 --- !u!114 &114626476236893254
 MonoBehaviour:
   m_ObjectHideFlags: 1

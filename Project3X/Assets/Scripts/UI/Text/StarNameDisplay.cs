@@ -1,26 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 
 namespace Project3X
 {
     public class StarNameDisplay : MonoBehaviour
     {
-
         private void OnEnable()
         {
-           
+            GetComponentInParent<Star>().onStarNameChanged += NameDisplay;
         }
 
         public void NameDisplay(string starName)
         {
-            this.GetComponent<TextMeshProUGUI>().text = starName;
-        }
-
-        private void OnDestroy()
-        {
-           
+            GetComponent<TextMeshPro>().text = starName;
         }
     }
 }

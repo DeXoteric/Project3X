@@ -3,54 +3,20 @@ using UnityEngine;
 
 namespace Project3X
 {
-    public class Star
+    public class Star : MonoBehaviour
     {
-        public static SaveData saveData;
+        public string StarID { get; set; }
+        public string StarName { get; set; }
+        public Vector3 StarPosition { get; set; }
 
-        public string StarName { get; private set; }
-        public Vector3 StarPosition { get; private set; }
-        public float DistanceFromGalaxyCenter { get; private set; }
-        private int numPlanets;
-        private int numAsteroids;
-        private int numConnectionPoints;
+        public List<Planet> planets = new List<Planet>();
 
-        
+        public delegate void OnStarNameChanged(string starName);
+        public event OnStarNameChanged onStarNameChanged = delegate { };
 
-        public Star(Vector3 position, int index, Transform parent)
+        private void Start()
         {
-            
-            StarName = "Star " + (index + 1);
-            StarPosition = position;
-            DistanceFromGalaxyCenter = Vector3.Distance(Vector3.zero, position);
-            numPlanets = RandomNumPlanets();
-            numAsteroids = 3;
-            numConnectionPoints = 2;
-
-            //Debug.Log("created " + StarName + " with: " + numPlanets + " planets, " + numAsteroids + " asteroids, " + numConnectionPoints + " connection point/s");
-
-            //GameObject star = SpaceObjects.CreateSphereObject(StarName);
-            GameObject star = GameObject.Instantiate(GalaxyManager.instance.starPrefab);
-            star.name = StarName;
-
-            GalaxyManager.instance.stars.Add(star.name, this);
-
-            for (int i = 0; i < numPlanets; i++)
-            {
-                Planet planet = new Planet(this, i, star.transform);
-                
-                
-            }
-
-            star.transform.position = position;
-            star.transform.SetParent(parent);
-           
-
-            //Debug.Log("Distance from galaxy center: " + DistanceFromGalaxyCenter);
-        }
-
-        private int RandomNumPlanets()
-        {
-            return Random.Range(2, 7);
+            onStarNameChanged(StarName);
         }
     }
 }
