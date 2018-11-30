@@ -56,8 +56,8 @@ MonoBehaviour:
   planetPrefab: {fileID: 114689485040252412, guid: 0a5e90fe735a95b418aec1e8f0281c4b,
     type: 2}
   seedNumber: 0
-  minimumRadius: 100
-  maximumRadius: 2000
+  minimumRadius: 250
+  maximumRadius: 2500
   numberOfStars: 250
   minDistBetweenStars: 150
   minNumPlanets: 2

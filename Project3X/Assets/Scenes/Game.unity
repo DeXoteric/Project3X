@@ -252,10 +252,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1184843664874000, guid: 1f6a6c8cf1648d54592fec61cade33bc, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6a6c8cf1648d54592fec61cade33bc, type: 2}
   m_IsPrefabAsset: 0
@@ -297,26 +293,6 @@ Prefab:
     - target: {fileID: 4333925658326144, guid: f34b51bf2bcdca64183b5e43681e52b1, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114001465947979570, guid: f34b51bf2bcdca64183b5e43681e52b1,
-        type: 2}
-      propertyPath: maximumRadius
-      value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114001465947979570, guid: f34b51bf2bcdca64183b5e43681e52b1,
-        type: 2}
-      propertyPath: minimumRadius
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 114001465947979570, guid: f34b51bf2bcdca64183b5e43681e52b1,
-        type: 2}
-      propertyPath: minDistBetweenStars
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 114001465947979570, guid: f34b51bf2bcdca64183b5e43681e52b1,
-        type: 2}
-      propertyPath: numberOfStars
-      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f34b51bf2bcdca64183b5e43681e52b1, type: 2}
