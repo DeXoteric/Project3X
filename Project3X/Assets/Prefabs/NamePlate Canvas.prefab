@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 223668188240664636}
   - component: {fileID: 114787478193432712}
   - component: {fileID: 114630589618955116}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: NamePlate Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23644420561726310}
   - component: {fileID: 222819869259923270}
   - component: {fileID: 114950922000479556}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: TextMeshPro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
